@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="keywords" content="HOSPITAL,HOSPITAL.COM,HOSPITAL WEBSITE, MEDICAN">
+	<meta name="description" content="india's best hospital website of indian">
+	<meta name="author" content="hospital.com">
+	<title>hospital.com</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+</head>
+<body>
+<!-- Start Header Coding-->
+<header>
+	<div class="menu">
+		<!-- Start Brand name coding-->
+		<div class="brand-name">
+			<a href="/">
+				<h2 class="animated flash">
+				<i class="fa fa-hospital"></i>&nbsp;
+				GEM HOSPITAL</h2>
+			</a>
+		</div>
+		<!-- End Brand name coding-->
+		<!-- Start Nav coding & menu coding -->
+         <nav>
+         	<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/gallery">Gallery</a></li>
+				<li><a href="/register">Patients</a></li>
+				<li><a href="/table">Patient Record</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+         	</ul>
+         </nav>
+		<!-- End Nav coding & menu coding -->
+	</div>
+</header>
+<!-- End Header Coding-->
+<!-- Start Section Coding-->
+<section>
+	<div class="w-80">
+     <div class="form-box">
+     	<h1>Patient Details</h1>
+     	<hr>
+     	<form action="/register" method="post" enctype="multipart/form-data">
+               <div class="input-row">
+				   <lable for="name">Patient Name</lable>
+				   <input type="text" name="name" id="name" />
+			   </div>  
+			   <div class="input-row">
+				  <lable for="Code">Patient Code</lable>
+				  <input type="text" name="Code" id="Code" />
+			   </div>
+			   <div class="input-row">
+				<lable for="Age">Age</lable>
+				<input type="number" name="Age" id="Age" />
+			 </div>
+			 <div class="input-row">
+				<lable for="Diagnosis">Diagnosis</lable>
+				<input type="text" name="Diagnosis" id="Diagnosis" />
+			 </div>
+			 <div class="input-row">
+				<lable for="Datein">Check-In</lable>
+				<input type="date" name="Datein" id="Datein" />
+			 </div>
+			 <div class="input-row">
+				<lable for="Dateout">Check-Out</lable>
+				<input type="date" name="Dateout" id="Dateout" />
+			 </div>
+			 <div class="input-row">
+				<lable for="Medications">Medications</lable>
+				<input type="text" name="Medications" id="Medications" />
+			 </div>
+			 <div class="input-row">
+				<lable for="TreatmentPlans">Treatment Plans</lable>
+				<input type="text" name="TreatmentPlans" id="TreatmentPlans" />
+			 </div>
+			 <div class="input-row">
+				<lable for="MedicalHistories">Medical Histories</lable>
+				<input type="text" name="MedicalHistories" id="MedicalHistories" />
+			 </div>
+			 <div class="input-row">
+				<lable >Radiology Image</lable>
+				<input type="file" accept="image/*" name="image" style="width:28vw;height:2.5vw;"  />
+			 </div>
+			 <div class="input-row">
+				<lable for="ProgressNote">Progress Note</lable>
+				<input type="text" name="ProgressNote" id="ProgressNote" />
+			 </div>
+			 <div class="input-row">
+				<lable for="BillDate">Bill Date</lable>
+				<input type="text" name="BillDate" id="BillDate" />
+			 </div>
+			 <button type="submit" id="login-btn">Submit</button>
+		    </form>
+		    <!-- <table class="list" id="storeList">
+				<thead>
+                  <tr>
+				     <th>Patient Name</th>
+				     <th>Patient Code</th>
+					 <th>Age</th>
+					 <th>Medical Diagnosis</th>
+					 <th>Check-In</th>
+					 <th>Check-Out</th>
+					 <th>Medications</th>
+					 <th>Treatment Plans</th>
+					 <th>Medical Histories</th>
+					 <th>Radiology Image</th>
+					 <th>Progress Note</th>
+					 <th>Bill Date</th>
+			      </tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table> -->
+		
+     </div>
+    </div>
+</section>
+<!-- <script>
+	const formEl=document.querySelector("form");
+	const tbodyEl=document.querySelector("tbody");
+	const tableEl=document.querySelector("table");
+	function onAddCode(e){
+		e.preventDefault();
+    
+		const name = document.getElementById("name").value;
+		const Code = document.getElementById("Code").value;
+		const Age = document.getElementById("Age").value;
+		const Diagnosis = document.getElementById("Diagnosis").value;
+		const Datein = document.getElementById("Datein").value;
+		const Dateout = document.getElementById("Dateout").value;
+		const Medications = document.getElementById("Medications").value;
+		const TreatmentPlans= document.getElementById("TreatmentPlans").value;
+		const MedicalHistories = document.getElementById("MedicalHistories").value;
+		const RadiologyImage= document.getElementById("RadiologyImage").value;
+		const ProgressNote = document.getElementById("ProgressNote").value;
+		const BillDate = document.getElementById("BillDate").value;
+		
+		tbodyEl.innerHTML +=`
+		<tr>
+			<td>${name}</td>
+			<td>${Code}</td>
+			<td>${Age}</td>
+			<td>${Diagnosis}</td>
+			<td>${Datein}</td>
+			<td>${Dateout}</td>
+			<td>${Medications}</td>
+			<td>${MedicalHistories}</td>
+			<td>${RadiologyImage}</td>
+			<td>${ProgressNote }</td>
+			<td>${BillDate}</td>
+			<td>${TreatmentPlans}</td>
+			<td><button class="deleteBtn">Delete</button></td>
+	    </tr>`;
+	}
+	function onDeleteRow(e){
+		if (!e.target.classList.contains("deleteBtn")){
+			return;
+		}
+		
+		const btn=e.target;
+		btn.closest("tr").remove();
+	}
+
+	function onedit(e){
+		document.getElementById('name').value=selectedRow.cells[0].innerHTML;
+		document.getElementById('Code').value=selectedRow.cells[1].innerHTML;
+		document.getElementById('Age').value=selectedRow.cells[2].innerHTML;
+		document.getElementById('Diagnosis').value=selectedRow.cells[3].innerHTML;
+	}
+	formEl.addEventListener("submit",onAddCode);
+	tableEl.addEventListener("click",onDeleteRow);
+</script>	 -->
+<!-- <script>
+	var selectedRow=null;
+	function onFormSubmit(e){
+		event.preventDefault();
+		var formData=readFormData();
+		if(selectedRow === null){
+			insertNewRecord(formData);
+		}
+		else{
+              updateRecord(formData);
+		}
+		resetForm();
+	}
+
+	function readFormData(){
+		var formData ={};
+		formData["name"]=document.getElementById("name").value;
+		formData["Code"]=document.getElementById("Code").value;
+		formData["Age"]=document.getElementById("Age").value;
+		formData["Diagnosis"]=document.getElementById("Diagnosis").value;
+		formData["Datein"]=document.getElementById("Datein").value;
+		formData["Dateout"]=document.getElementById("Dateout").value;
+		formData["Medications"]=document.getElementById("Medications").value;
+		formData["MedicalHistories"]=document.getElementById("MedicalHistories").value;
+		formData["RadiologyImage"]=document.getElementById("RadiologyImage").value;
+		formData["ProgressNote"]=document.getElementById("ProgressNote").value;
+		formData["TreatmentPlans"]=document.getElementById("TreatmentPlans").value;
+		formData["BillDate"]=document.getElementById("BillDate").value;
+		return formData;
+	}
+	function insertNewRecord(data){
+		var table=document.getElementById("storeList").getElementsByTagName('tbody')[0];
+		var newRow = table.insertRow(table.length);
+		var cell1=newRow.insertCell(0);
+		    cell1.innerHTML=data.name;
+	    var cell2=newRow.insertCell(1);
+		    cell2.innerHTML=data.Code;
+		var cell3=newRow.insertCell(2);
+		    cell3.innerHTML=data.Age;
+		var cell4=newRow.insertCell(3);
+		    cell4.innerHTML=data.Diagnosis;
+		var cell5=newRow.insertCell(4);
+		    cell5.innerHTML=data.Datein;
+		var cell6=newRow.insertCell(5);
+		    cell6.innerHTML=data.Dateout;
+		var cell7=newRow.insertCell(6);
+		    cell7.innerHTML=data.Medications;
+        var cell8=newRow.insertCell(7);
+		    cell8.innerHTML=data.TreatmentPlans;
+		var cell9=newRow.insertCell(8);
+		    cell9.innerHTML=data.MedicalHistories;
+		var cell10=newRow.insertCell(9);
+		    cell10.innerHTML=data.RadiologyImage;
+		var cell11=newRow.insertCell(10);
+		    cell11.innerHTML=data.ProgressNote;
+		var cell12=newRow.insertCell(11);
+		    cell12.innerHTML=data.BillDate;
+		var cell13=newRow.insertCell(12);
+		    cell13.innerHTML=`<button onClick='onEdit(this)'>Edit</button> <button onClick='onDelete(this)'>Delete</button>`;
+	}
+
+	function onEdit(td){
+		selectedRow=td.parentElement.parentElement;
+		document.getElementById('name').value=selectedRow.cells[0].innerHTML;
+		document.getElementById('Code').value=selectedRow.cells[1].innerHTML;
+		document.getElementById('Age').value=selectedRow.cells[2].innerHTML;
+		document.getElementById('Diagnosis').value=selectedRow.cells[3].innerHTML;
+		document.getElementById('Datein').value=selectedRow.cells[4].innerHTML;
+        document.getElementById('Dateout').value=selectedRow.cells[5].innerHTML;
+		document.getElementById('Medications').value=selectedRow.cells[6].innerHTML;
+		document.getElementById('MedicalHistories').value=selectedRow.cells[7].innerHTML;
+		document.getElementById('RadiologyImage').value=selectedRow.cells[8].innerHTML;
+		document.getElementById('ProgressNote').value=selectedRow.cells[9].innerHTML;
+		document.getElementById('TreatmentPlans').value=selectedRow.cells[10].innerHTML;
+		document.getElementById('BillDate').value=selectedRow.cells[11].innerHTML;
+		
+	} 
+	function updateRecord(formData){
+		selectedRow.cells[0].innerHTML=formData.name;
+		selectedRow.cells[1].innerHTML=formData.Code;
+		selectedRow.cells[2].innerHTML=formData.Age;
+		selectedRow.cells[3].innerHTML=formData.Diagnosis;
+        selectedRow.cells[4].innerHTML=formData.Datein;
+		selectedRow.cells[5].innerHTML=formData.Dateout;
+		selectedRow.cells[6].innerHTML=formData.Medications;
+		selectedRow.cells[7].innerHTML=formData.MedicalHistories;
+		selectedRow.cells[8].innerHTML=formData.RadiologyImage;
+		selectedRow.cells[9].innerHTML=formData.ProgressNote;
+		selectedRow.cells[10].innerHTML=formData.TreatmentPlans;
+		selectedRow.cells[11].innerHTML=formData.BillDate;
+
+	}
+
+	function onDelete(td){
+		if(confirm('do you want to delete this record?')){
+			row=td.parentElement.parentElement;
+			document.getElementById('storeList').deleteRow(row.rowIndex);
+		}
+		resetForm();
+	}
+
+	function resetForm(){
+		document.getElementById('name').value='';
+		document.getElementById('Code').value='';
+		document.getElementById('Age').value='';
+		document.getElementById('Diagnosis').value='';
+		document.getElementById('Datein').value='';
+        document.getElementById('Dateout').value='';
+		document.getElementById('Medications').value='';
+		document.getElementById('MedicalHistories').value='';
+		document.getElementById('RadiologyImage').value='';
+		document.getElementById('ProgressNote').value='';
+		document.getElementById('TreatmentPlans').value='';
+		document.getElementById('BillDate').value='';
+	}
+
+
+</script> -->
+<!-- End Section Coding-->
+<!-- Start Footer Coding-->
+<footer>
+	<div class="w-80">
+		<div class="footer-box">
+ 		<h2>Services</h2>
+ 		<a href="#">HEPATOLOGY</a>
+ 		<a href="#">MEDICAL DRESSAGE</a>
+ 		<a href="#">LABORATORY</a>
+ 		<a href="#">VACCINATIONS</a>
+ 		<a href="#">WHITENING</a>
+ 	</div>
+ 	<div class="footer-box">
+ 		<h2>About Us</h2>
+ 		<a href="#">Company Overview</a>
+ 		<a href="#">Management</a>
+ 		<a href="#">Initiatives</a>
+ 		<a href="#">Carrers</a>
+ 		<a href="#">Our Doctors Achieve</a>
+ 	</div>
+ 	<div class="footer-box">
+ 		<h2>Contact Us</h2>
+ 		<a href="#">Post a Query</a>
+ 		<a href="#">Apollo Clinics</a>
+ 		<a href="#">Reach Hospitals</a>
+ 		<a href="#">Apollo Cradle</a>
+ 		<a href="#">Ask Question</a>
+ 	</div>
+ 	<div class="footer-box">
+ 		<h2>Facilities</h2>
+ 		<a href="#">HEPATOLOGY</a>
+ 		<a href="#">MEDICAL DRESSAGE</a>
+ 		<a href="#">LABORATORY</a>
+ 		<a href="#">VACCINATIONS</a>
+ 		<a href="#">WHITENING</a>
+ 	</div>
+	</div>
+</footer>
+<!-- End footer Coding-->
+</body>
+</html>
+
+
+			
+			

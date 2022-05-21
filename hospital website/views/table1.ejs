@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="keywords" content="HOSPITAL,HOSPITAL.COM,HOSPITAL WEBSITE, MEDICAN">
+	<meta name="description" content="india's best hospital website of indian">
+	<meta name="author" content="hospital.com">
+	<title>hospital.com</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+   
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- font-awesome -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+<!-- Start Header Coding-->
+<header>
+	<div class="menu">
+		<!-- Start Brand name coding-->
+		<div class="brand-name">
+			<a href="/">
+				<h2 class="animated flash">
+				<i class="fa fa-hospital"></i>&nbsp;
+				GEM HOSPITAL</h2>
+			</a>
+		</div>
+		<!-- End Brand name coding-->
+		<!-- Start Nav coding & menu coding -->
+         <nav>
+         	<ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/register">Patients</a></li>
+            <li><a href="/table">Patient Record</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+         	</ul>
+         </nav>
+		<!-- End Nav coding & menu coding -->
+	</div>
+</header>
+<!-- End Header Coding-->
+<!-- Start Section Coding-->
+
+<body>
+    <section>
+        <div class="w-80">
+         <div class="form-box">
+             <h1>Patient Record</h1>
+            <hr>
+             <table class="list" id="storeList" contenteditable="true">
+                <thead>
+                  <tr>
+                     <th>Patient Name</th>
+                     <th>Patient Code</th>
+                     <th>Age</th>
+                     <th>Medical Diagnosis</th>
+                     <th>Check-In</th>
+                     <th>Check-Out</th>
+                     <th>Medications</th>
+                     <th>Treatment Plans</th>
+                     <th>Radiology Image</th>
+                     <th>Progress Note</th>
+                     <th>Bill Date</th>
+                     
+                     <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+        
+              <% for(var i=0;i<data.length;i++) { %>
+       
+        <tr>
+            <td><%=data[i].name%></td>
+            <td><%=data[i].Code %></td>
+ <td><%=data[i].Age %></td>
+ <td><%=data[i].Diagnosis %></td>
+ <td><%=data[i].Datein %></td>
+ <td><%=data[i].Dateout %></td>
+ <td><%=data[i].Medications %></td>
+ <td><%=data[i].TreatmentPlans %></td>
+ 
+<td><img src="/uploads/<%=data[i].filename %>" class="img-fluid" alt="no-img"  height="50px" width="50px"/></td>
+ <td><%=data[i].ProgressNote %></td>
+ <td><%=data[i].BillDate %></td>
+ 
+ <td>
+    <form action="/table" method="post">
+      <input type="checkbox" name="checkbox" value="<%=data[i]._id%>" onchange="this.form.submit()" >  
+</form>
+
+</td>
+
+
+
+            
+        </tr>
+     <% }%> 
+                </tbody>
+            </div>
+        </div>
+    </table>
+    </section>
+
+       
+    
+</body>
+</html>    
